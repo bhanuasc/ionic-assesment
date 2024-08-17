@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ng-container [ngSwitch]="folder">
+      <div *ngSwitchCase="'home'">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Login</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form (ngSubmit)="login()">
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input [(ngModel)]="username" name="username" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+              </ion-item>
+              <ion-button expand="full" type="submit">Login</ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngSwitchCase="'products'">
+        <div class="card-container">
+          <ng-container *ngFor="let card of cards">
+            <ion-card class="responsive-card">
+              <img [src]="card.img" [alt]="card.title" />
+              <ion-card-header>
+                <ion-card-title class="title">{{ card.title }}</ion-card-title>
+                <ion-card-subtitle class="sub">{{ card.subtitle }}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                {{ card.content }}
+              </ion-card-content>
+            </ion-card>
+          </ng-container>
+        </div>
+      </div>
+      <div *ngSwitchCase="'features'">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>features Content</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>This is the content for the Features page.</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div *ngSwitchDefault>
+        <strong class="capitalize">{{ folder }}</strong>
+        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      </div>
+    </ng-container>
+  </div>
+</ion-content>

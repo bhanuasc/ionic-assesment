@@ -1,0 +1,49 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+body {
+  background-color: #6CB4EE; /* Jean blue background for the entire screen */
+  color: black; /* Default font color set to black */
+}
+
+.card-container {
+  background-color: #6CB4EE;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.responsive-card {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F5F5DC; /* Beige background for product cards */
+  border-radius: 10px; /* Improved border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for card depth */
+  overflow: hidden;
+}
+
+.title{
+  color: black;
+  font-weight: bolder;
+
+}
+.sub{
+  color: black;
+  font-weight: bold;
+}
+
+.responsive-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px; /* Matches the card's border radius */
+  border-top-right-radius: 10px; /* Matches the card's border radius */
+}
+
+.responsive-card p {
+  color: black; /* Black font color for card text */
+}
+

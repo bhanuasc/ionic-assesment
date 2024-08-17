@@ -1,0 +1,108 @@
+/* General Menu Styling */
+
+/* Set the width of the menu */
+ion-menu {
+  --width: 250px; /* Adjust this value as needed */
+}
+
+/* Optionally, adjust the width for different screen sizes */
+@media (min-width: 768px) {
+  ion-menu {
+    --width: 300px; /* Example width for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  ion-menu {
+    --width: 200px; /* Example width for smaller screens */
+  }
+}
+
+
+ion-menu {
+  --background: var(--ion-item-background, var(--ion-background-color, #F4F4F9));
+}
+
+ion-menu.md ion-content,
+ion-menu.ios ion-content {
+  --background: var(--ion-item-background, var(--ion-background-color, #F4F4F9)); /* Light grey background for a modern look */
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 24px;
+  --padding-bottom: 24px;
+}
+
+ion-menu.md ion-list,
+ion-menu.ios ion-list {
+  padding: 24px 0; /* Increased padding for a cleaner appearance */
+}
+
+/* Items */
+ion-menu.md ion-item,
+ion-menu.ios ion-item {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --min-height: 48px; /* Slightly reduced height for a more compact design */
+  border-radius: 8px; /* Smooth corners for a modern feel */
+  margin-bottom: 8px; /* Spacing between items */
+  background: #808080; /* Default grey background for items */
+  color: #FFFFFF; /* White font color by default */
+  border: 2px solid transparent; /* Transparent border for spacing */
+}
+
+/* Selected Item */
+ion-menu.md ion-item.selected,
+ion-menu.ios ion-item.selected {
+  background: #ffffff; /* White background for selected item */
+  color: #000000 !important; /* Grey font color when selected */
+}
+
+ion-menu.md ion-item.selected ion-icon,
+ion-menu.ios ion-item.selected ion-icon {
+  color: #ffffff; /* Icon color changes to grey */
+}
+
+/* Icons */
+ion-menu.md ion-item ion-icon,
+ion-menu.ios ion-item ion-icon {
+  font-size: 24px; /* Slightly larger icons for modern aesthetics */
+  color: #FFFFFF; /* White icon color by default */
+}
+
+/* Labels */
+ion-menu.md ion-item ion-label,
+ion-menu.ios ion-item ion-label {
+  font-weight: 500;
+  color: #FFFFFF; /* White font color by default */
+}
+
+/* iOS Specific Adjustments */
+ion-menu.ios ion-content {
+  --padding-bottom: 24px;
+}
+
+ion-menu.ios ion-list {
+  padding: 24px 0 0 0;
+}
+
+ion-menu.ios ion-note {
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+ion-menu.ios ion-list-header,
+ion-menu.ios ion-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ion-menu.ios ion-list#labels-list ion-list-header {
+  margin-bottom: 8px;
+}
+
+/* Additional Styling */
+ion-note {
+  display: inline-block;
+  font-size: 14px;
+  color: #FFFFFF; /* Bright white for note text */
+}
